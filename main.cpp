@@ -50,10 +50,10 @@ int main(){
             break; // need to terminate the problem 
         } 
 
-        count += 1;
         if (count == 8) 
             std::cout << "Tie!" << std::endl;
         
+        count += 1;
         turn = !turn;
     }
     
