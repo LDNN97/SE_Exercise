@@ -1,7 +1,5 @@
 #include<iostream>
 
-using namespace std;
-
 bool isWin(char game[3][3]){ 
     bool win = false; 
     if (game[0][0] == game[0][1] && game[0][1] == game[0][2] && (game[0][0] == 'X' || game[0][0] == 'O')) win = true; 
@@ -20,32 +18,47 @@ bool isWin(char game[3][3]){
 int main(){ 
     int i, j; 
     char game[3][3] = {' '}; // Tic-tac-toe 
-    char player1 = 'X'; 
-    char player2 = 'O'; 
-    bool turn = true; // false for player 1's turn, true for player 2's turn. Player 1 first. 
-    cout << "X = Player 1" << endl << "O = Player 2" << endl; 
-    for (int n = 0; n < 9; n++){ 
-        turn = !turn;  // use the not-operator to change true to false or false to true. 
+    char player1 = 'X'; char player2 = 'O'; 
+    bool turn = false; // false for player 1's turn, true for player 2's turn. Player 1 first. 
+
+    std::cout << "X = Player 1" << std::endl << "O = Player 2" << std::endl; 
+    int count = 0;
+    while (count < 9) { 
         if (turn == false) 
-            cout << "Player 1: "; 
+            std::cout << "Player 1: "; 
         else 
-            cout << "Player 2: "; 
-        cout << "Which cell to mark? i:[0..2], j:[0..2]: ";  // !!!
-        cin >> i >> j; 
+            std::cout << "Player 2: "; 
+        
+        std::cout << "Which cell to mark? i:[0..2], j:[0..2]: ";  // !!!
+        std::cin >> i >> j; 
+        if ((i < 0) || (i > 2) || (j < 0) || (j > 2)) {
+            std::cout << "input error" << std::endl;
+            continue;
+        }
+        if (game[i][j] != ' ') {
+            std::cout << "cell occupied" << std::endl;
+            continue;
+        }
+
         if (turn == false) 
             game[i][j] = player1; 
         else  
             game[i][j] = player2; 
+
         if (isWin(game)){ 
-            cout << "Win!" << endl; 
+            std::cout << "Win!" << std::endl; 
             break; // need to terminate the problem 
         } 
-        if (n == 8) 
-            cout << "Tie!" << endl;
+
+        count += 1;
+        if (count == 8) 
+            std::cout << "Tie!" << std::endl;
+        
+        turn = !turn;
     }
     // show the game to console 
-    cout << game[0][0] << " " << game[0][1] << " " << game[0][2] << endl; 
-    cout << game[1][0] << " " << game[1][1] << " " << game[1][2] << endl; 
-    cout << game[2][0] << " " << game[2][1] << " " << game[2][2] << endl; 
+    std::cout << game[0][0] << " " << game[0][1] << " " << game[0][2] << std::endl; 
+    std::cout << game[1][0] << " " << game[1][1] << " " << game[1][2] << std::endl; 
+    std::cout << game[2][0] << " " << game[2][1] << " " << game[2][2] << std::endl; 
     return 0; 
 } 
