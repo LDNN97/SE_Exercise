@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/Users/ldnn97/Downloads/SE Project/build",
-  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/game.dir/main.cpp.o -c \"/Users/ldnn97/Downloads/SE Project/main.cpp\"",
-  "file": "/Users/ldnn97/Downloads/SE Project/main.cpp"
-}
-]
