@@ -17,7 +17,9 @@ bool isWin(char game[3][3]){
  
 int main(){ 
     int i, j; 
-    char game[3][3] = {' '}; // Tic-tac-toe 
+    char game[3][3]; // Tic-tac-toe 
+    memset(game, 0, sizeof(game));
+
     char player1 = 'X'; char player2 = 'O'; 
     bool turn = false; // false for player 1's turn, true for player 2's turn. Player 1 first. 
 
@@ -35,7 +37,7 @@ int main(){
             std::cout << "input error" << std::endl;
             continue;
         }
-        if (game[i][j] != ' ') {
+        if (game[i][j] != '\0') {
             std::cout << "cell occupied" << std::endl;
             continue;
         }
