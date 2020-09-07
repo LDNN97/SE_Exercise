@@ -56,6 +56,7 @@ int main(){
         
         turn = !turn;
     }
+    
     // show the game to console 
     std::cout << game[0][0] << " " << game[0][1] << " " << game[0][2] << std::endl; 
     std::cout << game[1][0] << " " << game[1][1] << " " << game[1][2] << std::endl; 
