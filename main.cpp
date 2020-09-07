@@ -61,4 +61,4 @@ int main(){
     std::cout << game[1][0] << " " << game[1][1] << " " << game[1][2] << std::endl; 
     std::cout << game[2][0] << " " << game[2][1] << " " << game[2][2] << std::endl; 
     return 0; 
-} 
+}  
